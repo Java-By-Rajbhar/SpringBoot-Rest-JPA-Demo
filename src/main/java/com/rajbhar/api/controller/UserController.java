@@ -26,23 +26,6 @@ public class UserController {
 	{
 		return  userService.findAllUser();
 	}
-/*	@PostConstruct
-	public void initDB()
-	{
-		List<User> users = new ArrayList<User>();
-		
-		users.add(new User(101, "naveen", "Haryana", 18000));
-		users.add(new User(105, "pradeep", "Banglore", 28000));
-		users.add(new User(107, "gagan", "Pune", 48000));
-		users.add(new User(109, "hemant", "Surat", 58000));
-		users.add(new User(103, "kundan", "Jharkhand", 38000));
-		users.add(new User(104, "radha", "Kolkata", 78000));
-		users.add(new User(108, "mamta", "Varanasi", 88000));
-		
-		dao.save(users);
-		System.out.println(users.size()+" no of data has saved");
-		
-	}*/
 	
 	@PostMapping("/addUsers")
 	public List<User> addUsers(@RequestBody List<User> users)
