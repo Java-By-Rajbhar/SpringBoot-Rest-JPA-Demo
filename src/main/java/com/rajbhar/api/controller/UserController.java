@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rajbhar.api.model.User;
@@ -43,5 +45,9 @@ public class UserController {
 	{
 		return userService.deleteUserById(user_id);
 	}
-	
+	@PutMapping("/updateUsersById/")
+	public User updateUsersById(@RequestParam int user_id,@RequestParam String name)
+	{
+		return userService.updateUserById(user_id, name);
+	}
 }

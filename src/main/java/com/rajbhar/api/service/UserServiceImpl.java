@@ -38,4 +38,13 @@ public class UserServiceImpl implements UserService {
 		return (List<User>) dao.findAll();
 	}
 
+	@Override
+	public User updateUserById(int id,String name) {
+		// TODO Auto-generated method stub
+	User user_temp  =	dao.findOne(id);
+    user_temp.setName(name);
+    dao.save(user_temp);
+		return dao.findOne(id);
+	}
+
 }
